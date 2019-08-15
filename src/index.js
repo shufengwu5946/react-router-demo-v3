@@ -10,7 +10,7 @@ import Inbox, { Message } from "./Inbox";
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path="/" component={App}>
+    <Route component={App}>
       <IndexRoute component={Home} />
       <Route
         path="/home"
@@ -55,6 +55,7 @@ ReactDOM.render(
         <Redirect from="message(/:id)" to="/message/(:id)" />
       </Route>
     </Route>
+    <Redirect from="/" to="/home" />
   </Router>,
   document.getElementById("root")
 );

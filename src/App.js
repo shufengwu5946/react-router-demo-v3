@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Link, IndexLink } from "react-router";
+import { Link } from "react-router";
 
 class App extends React.Component {
   render() {

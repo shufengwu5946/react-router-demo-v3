@@ -7,10 +7,16 @@ import { withRouter } from "react-router";
 
 class Home extends React.Component {
   componentDidMount() {
-    this.props.router.setRouteLeaveHook(this.props.route, this.routerWillLeave);
+    console.log("this.props.route", this.props.route);
+    if (this.props.route.path === "/home") {
+      this.props.router.setRouteLeaveHook(
+        this.props.route,
+        this.routerWillLeave
+      );
+    }
   }
   routerWillLeave(nextLocation) {
-    return "Your work is not saved! Are you sure you want to leave?";
+    return "Are you sure you want to leave?";
   }
 
   render() {
